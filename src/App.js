@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
 import './App.css';
-import Form from './Form'
+import Form from './components/Form'
+import Members from './components/Members'
 
 function App() {
-  const [member, setMember] = useState({ name: "", email: "", role: "" })
-  console.log("member list" + member)
+  const [members, setMembers] = useState([
+    {
+      id: "",
+      name: "",
+      email: "",
+      role: "",
+    }
+  ])
+  const addNewMember = memberObjParam => {
+    setMembers([...members, { ...memberObjParam, id: Date.now() }])
+  }
+
   return (
-    <div>
-      <Form member={member} setMember={setMember} />
+    <div className="app">
+      <h1>Jason's Totally Awesome List Maker</h1>
+      <h2>(now with state)</h2>
+      <Form addNewMember={addNewMember} />
+      <Members members={members} />
     </div>
   );
 }
