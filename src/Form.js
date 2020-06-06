@@ -15,21 +15,21 @@ const Form = props => {
     return (
         <form className="form" onSubmit={submitForm}>
             <label htmlFor="name">
-                Name
+                Name:
                 <input id="name" type="text" placeholder="Enter Full Name"
                     onChange={handleChanges} value={props.member.name} name="name" />
             </label>
             <label htmlFor="email">
-                email
+                E-Mail:
                 <input id="email" type="text" placeholder="Enter E-Mail"
                     onChange={handleChanges} value={props.member.email} name="email" />
             </label>
             <label htmlFor="role">
-                role
+                Role:
                 <input id="role" type="text" placeholder="Enter Role"
                     onChange={handleChanges} value={props.member.role} name="role" />
             </label>
-            <button type="submit">Commit to List</button>
+            <button type="submit">Add to List</button>
         </form>
     )
 }
